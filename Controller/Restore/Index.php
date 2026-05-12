@@ -29,13 +29,13 @@ class Index implements HttpGetActionInterface
      * @param LoggerInterface $psrLogger
      */
     public function __construct(
-        private ResultFactory $resultFactory,
-        private RequestInterface $request,
-        private Logger $logger,
-        private QuoteIdMaskFactory $quoteIdMaskFactory,
-        private CartRepositoryInterface $cartRepository,
-        private CheckoutSession $checkoutSession,
-        private LoggerInterface $psrLogger
+        private readonly ResultFactory $resultFactory,
+        private readonly RequestInterface $request,
+        private readonly Logger $logger,
+        private readonly QuoteIdMaskFactory $quoteIdMaskFactory,
+        private readonly CartRepositoryInterface $cartRepository,
+        private readonly CheckoutSession $checkoutSession,
+        private readonly LoggerInterface $psrLogger
     ) {
     }
 

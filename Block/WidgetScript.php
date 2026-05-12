@@ -30,13 +30,13 @@ class WidgetScript extends Template
      */
     public function __construct(
         Context $context,
-        private Config $config,
-        private CheckoutSession $checkoutSession,
-        private CustomerSession $customerSession,
-        private QuoteIdMaskFactory $quoteIdMaskFactory,
-        private QuoteIdMaskResource $quoteIdMaskResource,
-        private ProductRepositoryInterface $productRepository,
-        private LoggerInterface $psrLogger,
+        private readonly Config $config,
+        private readonly CheckoutSession $checkoutSession,
+        private readonly CustomerSession $customerSession,
+        private readonly QuoteIdMaskFactory $quoteIdMaskFactory,
+        private readonly QuoteIdMaskResource $quoteIdMaskResource,
+        private readonly ProductRepositoryInterface $productRepository,
+        private readonly LoggerInterface $psrLogger,
         array $data = []
     ) {
         parent::__construct($context, $data);
@@ -56,6 +56,54 @@ class WidgetScript extends Template
     public function getWidgetUrl(): string
     {
         return $this->config->getWidgetUrl();
+    }
+
+    /**
+     * @return string
+     */
+    public function getChatServerUrl(): string
+    {
+        return $this->config->getChatServerUrl();
+    }
+
+    /**
+     * @return string
+     */
+    public function getWidgetColor(): string
+    {
+        return $this->config->getWidgetColor();
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->config->getTitle();
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubtitle(): string
+    {
+        return $this->config->getSubtitle();
+    }
+
+    /**
+     * @return string
+     */
+    public function getWelcomeMessage(): string
+    {
+        return $this->config->getWelcomeMessage();
+    }
+
+    /**
+     * @return string
+     */
+    public function getPosition(): string
+    {
+        return $this->config->getPosition();
     }
 
     /**

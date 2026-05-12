@@ -37,6 +37,33 @@
                     </depends>
                 </field>
             </group>
+            <group id="chat_widget" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Chat Widget Configurations</label>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="subtitle" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subtitle</label>
+                </field>
+                <field id="welcome_message" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Welcome Message</label>
+                </field>
+                <field id="widget_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Widget Color</label>
+                    <frontend_model>MageCloud\AiAssistant\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                </field>
+                <field id="position" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <source_model>MageCloud\AiAssistant\Model\Config\Source\Position</source_model>
+                </field>
+            </group>
+            <group id="indexes" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Indexes</label>
+                <field id="reindex_all" translate="label" type="button" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reindex Products</label>
+                    <frontend_model>MageCloud\AiAssistant\Block\Adminhtml\System\Config\ReindexAll</frontend_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>

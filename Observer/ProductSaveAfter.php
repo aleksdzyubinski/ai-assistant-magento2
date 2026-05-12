@@ -21,10 +21,10 @@ class ProductSaveAfter implements ObserverInterface
      * @param LoggerInterface $psrLogger
      */
     public function __construct(
-        private Config $config,
-        private Curl $curl,
-        private Logger $logger,
-        private LoggerInterface $psrLogger
+        private readonly Config $config,
+        private readonly Curl $curl,
+        private readonly Logger $logger,
+        private readonly LoggerInterface $psrLogger
     ) {
     }
 
