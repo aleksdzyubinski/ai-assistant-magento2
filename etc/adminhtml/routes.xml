@@ -2,8 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="magecloud_ai_assistant" frontName="magecloud_ai_assistant">
-            <module name="MageCloud_AiAssistant" before="Magento_Backend"/>
+        <route id="comerix_ai_assistant" frontName="comerix_ai_assistant">
+            <module name="Comerix_AiAssistant" before="Magento_Backend"/>
         </route>
     </router>
 </config>

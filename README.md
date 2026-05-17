@@ -1,4 +1,4 @@
-# MageCloud AI Assistant for Magento 2
+# Comerix AI Assistant for Magento 2
 
 Injects a third-party AI Assistant widget script into all frontend pages.
 ## Requirements
@@ -10,7 +10,7 @@ Injects a third-party AI Assistant widget script into all frontend pages.
 ### Via Composer (recommended)
 
 ```bash
-composer require magecloud/magento2-ai-assistant
+composer require comerix/magento2-ai-assistant
 bin/magento setup:upgrade
 bin/magento setup:di:compile
 bin/magento cache:flush
@@ -18,7 +18,7 @@ bin/magento cache:flush
 
 ### Manual installation
 
-1. Create the directory `app/code/MageCloud/AiAssistant`.
+1. Create the directory `app/code/Comerix/AiAssistant`.
 2. Copy the module contents into that directory.
 3. Run the post-install commands:
 
@@ -55,8 +55,8 @@ Log output goes to `var/log/system.log` by default.
 ## Uninstallation
 
 ```bash
-bin/magento module:disable MageCloud_AiAssistant
-composer remove magecloud/magento2-ai-assistant
+bin/magento module:disable Comerix_AiAssistant
+composer remove comerix/magento2-ai-assistant
 bin/magento setup:upgrade
 bin/magento cache:flush
 ```

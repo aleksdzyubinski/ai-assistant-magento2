@@ -6,6 +6,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'MageCloud_AiAssistant',
+    'Comerix_AiAssistant',
     __DIR__
 );

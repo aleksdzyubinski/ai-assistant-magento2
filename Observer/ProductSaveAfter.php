@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Observer;
+namespace Comerix\AiAssistant\Observer;
 
-use MageCloud\AiAssistant\Logger\Logger;
-use MageCloud\AiAssistant\Service\Config;
+use Comerix\AiAssistant\Logger\Logger;
+use Comerix\AiAssistant\Service\Config;
 use Magento\Catalog\Model\Product;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
@@ -63,13 +63,13 @@ class ProductSaveAfter implements ObserverInterface
             $status = $this->curl->getStatus();
             if ($status < 200 || $status >= 300) {
                 $this->logger->warning(
-                    'MageCloud_AiAssistant: reindex request failed.',
+                    'Comerix_AiAssistant: reindex request failed.',
                     ['status' => $status, 'product_id' => $product->getId()]
                 );
             }
         } catch (\Exception $e) {
             $this->logger->error(
-                'MageCloud_AiAssistant: reindex request exception.',
+                'Comerix_AiAssistant: reindex request exception.',
                 ['product_id' => $product->getId()]
             );
             $this->psrLogger->error($e->getMessage(), ['exception' => $e]);

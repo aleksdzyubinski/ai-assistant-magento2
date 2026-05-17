@@ -1,6 +1,6 @@
 {
-    "name": "magecloud/magento2-ai-assistant",
-    "description": "MageCloud AI Assistant widget integration for Magento 2",
+    "name": "comerix/magento2-ai-assistant",
+    "description": "Comerix AI Assistant widget integration for Magento 2",
     "type": "magento2-module",
     "license": "MIT",
     "require": {
@@ -19,7 +19,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "MageCloud\\AiAssistant\\": ""
+            "Comerix\\AiAssistant\\": ""
         }
     }
 }

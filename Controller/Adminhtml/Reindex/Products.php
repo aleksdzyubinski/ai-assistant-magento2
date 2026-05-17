@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Controller\Adminhtml\Reindex;
+namespace Comerix\AiAssistant\Controller\Adminhtml\Reindex;
 
-use MageCloud\AiAssistant\Service\Config;
+use Comerix\AiAssistant\Service\Config;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\Result\Json;
@@ -14,7 +14,7 @@ use Psr\Log\LoggerInterface;
 
 class Products extends Action
 {
-    public const ADMIN_RESOURCE = 'MageCloud_AiAssistant::config';
+    public const ADMIN_RESOURCE = 'Comerix_AiAssistant::config';
 
     /**
      * @param Context $context
@@ -58,13 +58,13 @@ class Products extends Action
             $status = $this->curl->getStatus();
 
             if ($status < 200 || $status >= 300) {
-                $this->logger->warning('MageCloud_AiAssistant: reindex-all request failed.', ['status' => $status]);
+                $this->logger->warning('Comerix_AiAssistant: reindex-all request failed.', ['status' => $status]);
                 return $result->setData(['success' => false, 'message' => sprintf('Request failed with status %d.', $status)]);
             }
 
             return $result->setData(['success' => true, 'message' => 'Reindex completed successfully.']);
         } catch (\Exception $e) {
-            $this->logger->error('MageCloud_AiAssistant: reindex-all exception: ' . $e->getMessage());
+            $this->logger->error('Comerix_AiAssistant: reindex-all exception: ' . $e->getMessage());
             return $result->setData(['success' => false, 'message' => 'An error occurred. Please check the logs.']);
         }
     }

@@ -3,9 +3,9 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="footer">
-            <block name="magecloud.ai_assistant.widget_script"
-                   class="MageCloud\AiAssistant\Block\WidgetScript"
-                   template="MageCloud_AiAssistant::widget_script.phtml"/>
+            <block name="comerix.ai_assistant.widget_script"
+                   class="Comerix\AiAssistant\Block\WidgetScript"
+                   template="Comerix_AiAssistant::widget_script.phtml"/>
         </referenceContainer>
     </body>
 </page>

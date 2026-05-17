@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Service;
+namespace Comerix\AiAssistant\Service;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
@@ -12,15 +12,15 @@ class Config
     /**
      * Admin config path
      */
-    private const XML_PATH_ENABLED = 'magecloud_ai_assistant/general/enabled';
-    private const XML_PATH_WIDGET_URL = 'magecloud_ai_assistant/general/widget_url';
-    private const XML_PATH_CHAT_SERVER_URL = 'magecloud_ai_assistant/general/chat_server_url';
-    private const XML_PATH_REINDEX_SECRET = 'magecloud_ai_assistant/general/reindex_secret';
-    private const XML_PATH_WIDGET_COLOR = 'magecloud_ai_assistant/chat_widget/widget_color';
-    private const XML_PATH_TITLE = 'magecloud_ai_assistant/chat_widget/title';
-    private const XML_PATH_SUBTITLE = 'magecloud_ai_assistant/chat_widget/subtitle';
-    private const XML_PATH_WELCOME_MESSAGE = 'magecloud_ai_assistant/chat_widget/welcome_message';
-    private const XML_PATH_POSITION = 'magecloud_ai_assistant/chat_widget/position';
+    private const XML_PATH_ENABLED = 'comerix_ai_assistant/general/enabled';
+    private const XML_PATH_WIDGET_URL = 'comerix_ai_assistant/general/widget_url';
+    private const XML_PATH_CHAT_SERVER_URL = 'comerix_ai_assistant/general/chat_server_url';
+    private const XML_PATH_REINDEX_SECRET = 'comerix_ai_assistant/general/reindex_secret';
+    private const XML_PATH_WIDGET_COLOR = 'comerix_ai_assistant/chat_widget/widget_color';
+    private const XML_PATH_TITLE = 'comerix_ai_assistant/chat_widget/title';
+    private const XML_PATH_SUBTITLE = 'comerix_ai_assistant/chat_widget/subtitle';
+    private const XML_PATH_WELCOME_MESSAGE = 'comerix_ai_assistant/chat_widget/welcome_message';
+    private const XML_PATH_POSITION = 'comerix_ai_assistant/chat_widget/position';
 
     /**
      * @param ScopeConfigInterface $scopeConfig

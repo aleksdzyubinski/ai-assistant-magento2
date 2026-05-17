@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Logger;
+namespace Comerix\AiAssistant\Logger;
 
 use Magento\Framework\Logger\Monolog;
 

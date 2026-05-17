@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Block;
+namespace Comerix\AiAssistant\Block;
 
-use MageCloud\AiAssistant\Service\Config;
+use Comerix\AiAssistant\Model\ViewedProducts;
+use Comerix\AiAssistant\Service\Config;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Customer\Model\Session as CustomerSession;
@@ -25,6 +26,7 @@ class WidgetScript extends Template
      * @param QuoteIdMaskFactory $quoteIdMaskFactory
      * @param QuoteIdMaskResource $quoteIdMaskResource
      * @param ProductRepositoryInterface $productRepository
+     * @param ViewedProducts $viewedProducts
      * @param LoggerInterface $psrLogger
      * @param array $data
      */
@@ -36,6 +38,7 @@ class WidgetScript extends Template
         private readonly QuoteIdMaskFactory $quoteIdMaskFactory,
         private readonly QuoteIdMaskResource $quoteIdMaskResource,
         private readonly ProductRepositoryInterface $productRepository,
+        private readonly ViewedProducts $viewedProducts,
         private readonly LoggerInterface $psrLogger,
         array $data = []
     ) {
@@ -142,14 +145,31 @@ class WidgetScript extends Template
     }
 
     /**
+     * Returns viewed products as a JSON string for the chat init payload (guest session path).
+     *
+     * @return string
+     */
+    public function getViewedProductsJson(): string
+    {
+        $products = $this->viewedProducts->getViewedProducts();
+        if (empty($products)) {
+            return '[]';
+        }
+        return (string) json_encode($products, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT);
+    }
+
+    /**
      * @return string
      */
     public function getPageType(): string
     {
         return match ($this->getRequest()->getFullActionName()) {
-            'catalog_product_view'  => 'product',
-            'catalog_category_view' => 'category',
-            default                 => 'other',
+            'catalog_product_view'         => 'product',
+            'catalog_category_view'        => 'category',
+            'checkout_cart_index'          => 'cart',
+            'checkout_index_index'         => 'checkout',
+            'cms_page_view', 'cms_index_index' => 'cms',
+            default                        => 'other',
         };
     }
 

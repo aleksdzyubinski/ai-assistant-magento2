@@ -2,13 +2,13 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="magecloud" translate="label" sortOrder="400">
-            <label>MageCloud</label>
+        <tab id="comerix" translate="label" sortOrder="400">
+            <label>Comerix</label>
         </tab>
-        <section id="magecloud_ai_assistant" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="comerix_ai_assistant" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>AI Assistant</label>
-            <tab>magecloud</tab>
-            <resource>MageCloud_AiAssistant::config</resource>
+            <tab>comerix</tab>
+            <resource>Comerix_AiAssistant::config</resource>
             <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -50,18 +50,18 @@
                 </field>
                 <field id="widget_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Widget Color</label>
-                    <frontend_model>MageCloud\AiAssistant\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <frontend_model>Comerix\AiAssistant\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
                 </field>
                 <field id="position" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Position</label>
-                    <source_model>MageCloud\AiAssistant\Model\Config\Source\Position</source_model>
+                    <source_model>Comerix\AiAssistant\Model\Config\Source\Position</source_model>
                 </field>
             </group>
             <group id="indexes" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Indexes</label>
                 <field id="reindex_all" translate="label" type="button" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Reindex Products</label>
-                    <frontend_model>MageCloud\AiAssistant\Block\Adminhtml\System\Config\ReindexAll</frontend_model>
+                    <frontend_model>Comerix\AiAssistant\Block\Adminhtml\System\Config\ReindexAll</frontend_model>
                 </field>
             </group>
         </section>

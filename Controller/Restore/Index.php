@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Controller\Restore;
+namespace Comerix\AiAssistant\Controller\Restore;
 
-use MageCloud\AiAssistant\Logger\Logger;
+use Comerix\AiAssistant\Logger\Logger;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\RequestInterface;
@@ -47,7 +47,7 @@ class Index implements HttpGetActionInterface
         $cartId = (string) $this->request->getParam('cartId');
 
         if ($cartId === '') {
-            $this->logger->warning('MageCloud_AiAssistant Restore: cartId parameter is missing or empty.');
+            $this->logger->warning('Comerix_AiAssistant Restore: cartId parameter is missing or empty.');
 
             /** @var Forward $result */
             $result = $this->resultFactory->create(ResultFactory::TYPE_FORWARD);
@@ -56,14 +56,14 @@ class Index implements HttpGetActionInterface
             return $result;
         }
 
-        $this->logger->info('MageCloud_AiAssistant Restore: received cartId.', ['cartId' => $cartId]);
+        $this->logger->info('Comerix_AiAssistant Restore: received cartId.', ['cartId' => $cartId]);
 
         $quoteIdMask = $this->quoteIdMaskFactory->create()->load($cartId, 'masked_id');
         $quoteId = $quoteIdMask->getQuoteId();
 
         if (!$quoteId) {
             $this->logger->warning(
-                'MageCloud_AiAssistant Restore: no quote found for masked cartId.',
+                'Comerix_AiAssistant Restore: no quote found for masked cartId.',
                 ['cartId' => $cartId]
             );
 
@@ -78,7 +78,7 @@ class Index implements HttpGetActionInterface
             $quote = $this->cartRepository->get((int) $quoteId);
         } catch (NoSuchEntityException $e) {
             $this->logger->warning(
-                'MageCloud_AiAssistant Restore: quote not found.',
+                'Comerix_AiAssistant Restore: quote not found.',
                 ['quoteId' => $quoteId, 'cartId' => $cartId]
             );
             $this->psrLogger->error($e->getMessage(), ['exception' => $e]);
@@ -92,7 +92,7 @@ class Index implements HttpGetActionInterface
 
         if (!$quote->getIsActive()) {
             $this->logger->warning(
-                'MageCloud_AiAssistant Restore: quote is not active.',
+                'Comerix_AiAssistant Restore: quote is not active.',
                 ['quoteId' => $quoteId, 'cartId' => $cartId]
             );
 
@@ -106,7 +106,7 @@ class Index implements HttpGetActionInterface
         $this->checkoutSession->replaceQuote($quote);
 
         $this->logger->info(
-            'MageCloud_AiAssistant Restore: quote loaded into session, redirecting to cart.',
+            'Comerix_AiAssistant Restore: quote loaded into session, redirecting to cart.',
             ['quoteId' => $quoteId]
         );
 

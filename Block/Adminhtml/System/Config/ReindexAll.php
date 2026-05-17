@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Block\Adminhtml\System\Config;
+namespace Comerix\AiAssistant\Block\Adminhtml\System\Config;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
@@ -25,7 +25,7 @@ class ReindexAll extends Field
      */
     protected function _getElementHtml(AbstractElement $element): string
     {
-        $url = $this->getUrl('magecloud_ai_assistant/reindex/products');
+        $url = $this->getUrl('comerix_ai_assistant/reindex/products');
         $buttonId = $element->getHtmlId() . '_button';
         $statusId = $element->getHtmlId() . '_status';
 

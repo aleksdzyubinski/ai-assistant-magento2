@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Logger;
+namespace Comerix\AiAssistant\Logger;
 
 use Magento\Framework\Logger\Handler\Base;
 use Monolog\Logger;
@@ -17,5 +17,5 @@ class Handler extends Base
     /**
      * @var string
      */
-    protected $fileName = '/var/log/magecloud_ai_assistant.log';
+    protected $fileName = '/var/log/comerix_ai_assistant.log';
 }

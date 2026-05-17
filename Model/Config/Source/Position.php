@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MageCloud\AiAssistant\Model\Config\Source;
+namespace Comerix\AiAssistant\Model\Config\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
